@@ -5,7 +5,6 @@ package _03_jeopardy;
  *    Level 1
  */
 
-
 public class JeopardyRunner {
 	public static void main(String[] args) {
 		new Jeopardy().run();
