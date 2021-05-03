@@ -6,34 +6,36 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 public class Calculator implements ActionListener {
-	int add(int num1, int num2) {
-		return num1 + num2;
+	String add(int num1, int num2) {
+		return Integer.toString(num1 + num2);
 	}
 
-	int subtract(int num1, int num2) {
-		return num1 - num2;
+	String subtract(int num1, int num2) {
+		return Integer.toString(num1 - num2);
 	}
 
-	int multiply(int num1, int num2) {
-		return num1 * num2;
+	String multiply(int num1, int num2) {
+		return Integer.toString(num1 * num2);
 	}
 
-	int divide(int num1, int num2) {
-		return num1 / num2;
+	String divide(int num1, int num2) {
+		return Integer.toString(num1 / num2);
 	}
 
 	JFrame frame = new JFrame();
 	JPanel panel = new JPanel();
-	JTextField text1 = new JTextField();
-	JTextField text2 = new JTextField();
+	JTextField text1 = new JTextField(20);
+	JTextField text2 = new JTextField(20);
 	JButton button1 = new JButton("Add");
 	JButton button2 = new JButton("Subtract");
 	JButton button3 = new JButton("Multiply");
 	JButton button4 = new JButton("Divide");
+	JLabel label = new JLabel();
 
 	void createUI() {
 		frame.add(panel);
@@ -43,6 +45,7 @@ public class Calculator implements ActionListener {
 		panel.add(button2);
 		panel.add(button3);
 		panel.add(button4);
+		panel.add(label);
 
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setVisible(true);
@@ -70,20 +73,29 @@ public class Calculator implements ActionListener {
 		// TODO Auto-generated method stub
 		if (arg0.getSource().equals(button1)) {
 			System.out.println("Add");
-			System.out.println(add(Integer.parseInt(text1.getText()),
+			//System.out.println(add(Integer.parseInt(text1.getText()),
+					 //Integer.parseInt(text2.getText())));
+			label.setText(add(Integer.parseInt(text1.getText()),
 					 Integer.parseInt(text2.getText())));
 		} else if (arg0.getSource().equals(button2)) {
 			System.out.println("Subtract");
-			System.out.println(subtract(Integer.parseInt(text1.getText()),
+			//System.out.println(subtract(Integer.parseInt(text1.getText()),
+					 //Integer.parseInt(text2.getText())));
+			label.setText(subtract(Integer.parseInt(text1.getText()),
 					 Integer.parseInt(text2.getText())));
 		} else if (arg0.getSource().equals(button3)) {
 			System.out.println("Multiply");
-			System.out.println(multiply(Integer.parseInt(text1.getText()),
+			//System.out.println(multiply(Integer.parseInt(text1.getText()),
+					 //Integer.parseInt(text2.getText())));
+			label.setText(multiply(Integer.parseInt(text1.getText()),
 					 Integer.parseInt(text2.getText())));
 		} else if (arg0.getSource().equals(button4)) {
 			System.out.println("Divide");
-			 System.out.println(divide(Integer.parseInt(text1.getText()),
+			 //System.out.println(divide(Integer.parseInt(text1.getText()),
+			 //Integer.parseInt(text2.getText())));
+			 label.setText(divide(Integer.parseInt(text1.getText()),
 			 Integer.parseInt(text2.getText())));
+			 
 		}
 
 	}
