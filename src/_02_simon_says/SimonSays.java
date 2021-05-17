@@ -55,7 +55,7 @@ public class SimonSays extends KeyAdapter {
 		//System.out.println("pressed");
 		// 16. If the keyCode matches the imageIndex and "Simon says"
 		if (e.getKeyCode() == (imageIndex) && simonSays ) {
-			//System.out.println("correct");
+			System.out.println("correct1");
 			points++;
 			//speak("Correct");
 		}
@@ -67,6 +67,7 @@ public class SimonSays extends KeyAdapter {
 		// say..."
 		else if(e.getKeyCode() != (imageIndex) && !simonSays){
 			points++;
+			System.out.println("correct");
 			//speak("Correct");
 		}
 		// 20. Increase the value of score

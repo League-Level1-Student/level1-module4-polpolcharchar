@@ -63,35 +63,37 @@ JLabel label = new JLabel("ASCII:");
 		// 12. Add the label from step 11. to row 3, column 0 of the panel
 		addObjectToPanel(labelDecimal, 3, 0, 1);
 		// 13. Add the decimalResult JTextField to the panel next to label from step 11.
-		
+		addObjectToPanel(decimalResult, 3, 1, 1);
 		// 14. Create a new JLabel with the text "Hexidecimal:"
-		
+		JLabel hex = new JLabel("Hexidecimal:");
 		// 15. Add the label from step 14. to row 4, column 0 of the panel
-		
+		addObjectToPanel(hex, 4, 0, 1);
 		// 16. Add the hexResult JTextField to the panel next to the label from step 14.
-		
+		addObjectToPanel(hexResult, 4, 1, 1);
 		// 17. Pack the frame
+		frame.pack();
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
 
 		// 18. If convertButton was pressed...
-		
+		if(arg0.getSource() == convertButton) {
 			// 19. Get the text from inputTextField and save it to a new String variable
-			
+			String inputText = inputTextField.getText();
 			// 20. Call binaryToAscii() with the text from step 19 and save the result in a new String variable
-			
+			String asciiResults = binaryToAscii(inputText);
 			// 21. Set the text of asciiResult to the new String
-			
+			asciiResult.setText(asciiResults);
 			// 22. Call binaryToInt() with the text from step 19 and save the result in a new String variable
-			
+			String intResult = binaryToInt(inputText);
 			// 23. Set the text of decimalResult to the new String
-			
+			decimalResult.setText(intResult);
 			// 24. Call binaryToHex() with the text from step 19 and save the result in a new String variable
-			
+			String hexTextResult = binaryToHex(inputText);
 			// 25. Set the text of hexResult to the new String
-			
+			hexResult.setText(hexTextResult);
+		}
 			// OPTIONAL: Create your own methods to convert binary to decimal (base 10) and
 			//           binary to hexidecimal (base 16) without using the Integer.parseInt() method!
 	}
